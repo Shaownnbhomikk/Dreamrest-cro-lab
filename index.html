@@ -383,30 +383,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
         function addToCart(productName, price) {
-
-            // Send ecommerce event to Google Analytics 4
-            gtag('event', 'add_to_cart', {
-
-                currency: 'INR',
-
-                value: price,
-
-                items: [
-                    {
-                        item_name: productName,
-                        price: price,
-                        quantity: 1
-                    }
-                ]
-
-            });
-
-
-            // User-facing confirmation
-            alert(productName + " added to cart!");
-
-        }
-
+    alert(productName + " added to cart!");
+}
     </script>
 
 </body>
