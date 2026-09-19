@@ -184,7 +184,7 @@
 
         <div class="price">₹29,999</div>
 
-        <button onclick="addToCart('DreamRest Classic')">
+        <onclick="addToCart('DreamRest Classic', 29999)"">
             Add to Cart
         </button>
 
@@ -203,7 +203,7 @@
 
         <div class="price">₹49,999</div>
 
-        <button onclick="addToCart('DreamRest Premium')">
+        <onclick="addToCart('DreamRest Premium', 49999)"">
             Add to Cart
         </button>
 
@@ -223,7 +223,7 @@
 
         <div class="price">₹74,999</div>
 
-        <button onclick="addToCart('DreamRest Luxe')">
+        <onclick="addToCart('DreamRest Luxe', 74999)")">
             Add to Cart
         </button>
 
@@ -264,10 +264,20 @@ function scrollToProducts() {
 }
 
 
-function addToCart(productName) {
+function addToCart(productName, price) {
+    gtag('event', 'add_to_cart', {
+        currency: 'INR',
+        value: price,
+        items: [
+            {
+                item_name: productName,
+                price: price,
+                quantity: 1
+            }
+        ]
+    });
 
     alert(productName + " added to cart!");
-
 }
 
 </script>
